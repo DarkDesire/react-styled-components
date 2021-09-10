@@ -6,3 +6,7 @@
 
 `npm start`
 `npm run build`
+
+![page 1](page1.png)
+
+![page 2](page2.png)

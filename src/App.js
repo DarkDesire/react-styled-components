@@ -50,16 +50,24 @@ function App() {
     }
   }
   return (
-    <ThemeProvider theme={GreenTheme}>
-      <div>
-        <MyHeader>{pageDisplay.title}</MyHeader>
-        <PageWrapper pid={id} npages={pages.length}>
-          {pageDisplay.buttons.map((button, i) => {
-            return <MyButton key={i} onClick={() => go(i)}>{button.text}</MyButton>
-          })}
-        </PageWrapper>
+    <div>
+      <ThemeProvider theme={GreenTheme}>
+          <MyHeader>{pageDisplay.title} | GreenTheme </MyHeader>
+          <PageWrapper pid={id} npages={pages.length}>
+            {pageDisplay.buttons.map((button, i) => {
+              return <MyButton key={i} onClick={() => go(i)}>{button.text}</MyButton>
+            })}
+          </PageWrapper>
+        </ThemeProvider>
+        <ThemeProvider theme={BlueTheme}>
+        <MySection>
+          <MyHeader>{pageDisplay.title} | BlueTheme</MyHeader>
+          <MyButton primary>My Button Primary</MyButton>
+          <MyButton>My Button</MyButton>
+          <MaterialButton>My Material Button</MaterialButton>
+        </MySection>
+        </ThemeProvider>
       </div>
-    </ThemeProvider>
   );
 }
 
